@@ -1,0 +1,3 @@
+Original decompiled source files from CorePrint-Driver-Sources.zip.
+Kept for reference only; they depend on CorePrint app classes and libraries and
+are not compiled into CoreLargePrint.

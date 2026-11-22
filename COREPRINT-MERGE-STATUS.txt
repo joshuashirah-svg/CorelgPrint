@@ -1,0 +1,31 @@
+CORELARGEPRINT / CTP100LG — COREPRINT RASTER INTEGRATION
+
+Integrated into app/src/main/java/com/corelargeprint:
+- CorePrintProtocol.java now creates image/text command headers, feed packets,
+  20-row zlib raster blocks, frame length fields, CRC-8, and 0xFF terminators.
+- MainActivity now sends CorePrint raster jobs over the previously confirmed
+  Bluetooth Classic SPP transport. Generic ESC/POS printing is disabled.
+- Receipt text is rendered into a 576-dot bitmap. Phone image selection,
+  preview, remove, and print controls remain available.
+- Writes are split into 512-byte chunks with 15 ms inter-chunk pacing.
+
+Local protocol self-test passed in the preparation environment:
+- feedPaper(20) exact bytes: 51 78 BD 00 01 00 14 6C FF
+- image/text header exact bytes
+- 51 78 CE marker and big-endian lengths
+- zlib payload round-trip
+- frame CRC-8 verification
+
+IMPORTANT CORRECTION: The earlier D3 feed opcode and 18-row block assumption were wrong for the latest CTP100LG findings. The feed command is BD; the Professional_Printer profile specifies 20-row blocks and 15 ms pacing. The CE raster framing/compression is still not proven by the supplied Java sources.
+
+Still not physically verified:
+- Actual output on the user's CTP100LG printer.
+- Exact original CorePrint pixel lookup-table output and any remaining model-
+  specific command sequencing not present in the supplied extracted snippets.
+- Whether the printer expects additional inter-block pacing or an end marker.
+
+Build limitation:
+The preparation container has Java 21 but no Android SDK or Gradle, so no APK
+could be built here. Run bash build-termux.sh in the user's configured Termux
+Android build environment. Do not describe the APK as physically verified until
+paper output is observed.

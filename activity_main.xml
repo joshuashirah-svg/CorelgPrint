@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?><ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent"><LinearLayout android:orientation="vertical" android:padding="16dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+<TextView android:text="CoreLargePrint" android:textSize="28sp" android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+<TextView android:text="CTP100LG — CorePrint raster printing" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+<Spinner android:id="@+id/deviceSpinner" android:layout_marginTop="12dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+<Button android:id="@+id/connectButton" android:text="Connect to printer" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+<Button android:id="@+id/refreshButton" android:text="Refresh paired printers" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+<TextView android:text="PRINT RECEIPT" android:textStyle="bold" android:layout_marginTop="16dp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+<EditText android:id="@+id/receiptText" android:hint="Receipt text" android:inputType="textMultiLine" android:minLines="6" android:gravity="top" android:text="Core Innovations CTP100LG&#10;TEST RECEIPT&#10;------------------------------&#10;Hello from CoreLargePrint" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+<Button android:id="@+id/printButton" android:text="Print Receipt" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+<Button android:id="@+id/imageButton" android:text="Insert Image from Phone" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+<ImageView android:id="@+id/imagePreview" android:visibility="gone" android:adjustViewBounds="true" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+<Button android:id="@+id/removeImageButton" android:text="Remove Image" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+<Button android:id="@+id/printImageButton" android:text="Print Selected Image" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+<TextView android:text="PROTOCOL DIAGNOSTIC" android:textStyle="bold" android:layout_marginTop="18dp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+<Button android:id="@+id/probeButton" android:text="Connection Probe" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+<Button android:id="@+id/startupButton" android:text="Capture Startup / Status" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+<Button android:id="@+id/rawButton" android:text="Legacy ESC/POS test disabled" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+<Button android:id="@+id/feedButton" android:text="CTP100LG Feed Paper Test (20)" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+<TextView android:id="@+id/status" android:text="Status: Ready" android:fontFamily="monospace" android:paddingTop="10dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+</LinearLayout></ScrollView>
